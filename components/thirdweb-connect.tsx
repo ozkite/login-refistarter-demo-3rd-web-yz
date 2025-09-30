@@ -39,13 +39,6 @@ const wallets = [
 
 export function ThirdwebConnect() {
   return (
-    <ConnectButton
-      client={client}
-      chains={[celo]}
-      wallets={wallets}
-      connectModal={{ size: "compact" }}
-      theme="dark"
-      className="w-full max-w-xs"
-    />
+    <ConnectButton client={client} chains={[celo]} wallets={wallets} connectModal={{ size: "wide" }} theme="dark" />
   )
 }
