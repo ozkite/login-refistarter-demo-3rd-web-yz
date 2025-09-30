@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react"
-import { ThirdwebConnect } from "@/components/thirdweb-connect"
+import { SignInModal } from "@/components/sign-in-modal"
 
 export default function HomePage() {
   const rightSideRef = useRef<HTMLDivElement>(null)
@@ -37,13 +37,8 @@ export default function HomePage() {
           <img src="/refi-logo.png" alt="ReFi STARTER" className="h-16 w-auto" />
         </div>
 
-        {/* Welcome Text */}
-        <div className="z-10 text-center space-y-8">
-          <h1 className="text-7xl font-mono text-white font-bold tracking-wider pixelated-text">Welcome</h1>
-
-          <div className="flex justify-center">
-            <ThirdwebConnect />
-          </div>
+        <div className="z-10">
+          <SignInModal />
         </div>
       </div>
 
