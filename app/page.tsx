@@ -37,11 +37,7 @@ export default function HomePage() {
           <img src="/refi-logo.png" alt="ReFi STARTER" className="h-16 w-auto" />
         </div>
 
-        <div className="z-10 flex flex-col items-center gap-6">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white mb-2">Welcome</h1>
-            <p className="text-gray-400">Connect your wallet to get started</p>
-          </div>
+        <div className="z-10">
           <ThirdwebConnect />
         </div>
       </div>

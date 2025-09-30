@@ -1,6 +1,6 @@
 "use client"
 
-import { ConnectButton } from "thirdweb/react"
+import { ConnectEmbed } from "thirdweb/react"
 import { createThirdwebClient } from "thirdweb"
 import { inAppWallet, createWallet } from "thirdweb/wallets"
 import { celo } from "thirdweb/chains"
@@ -38,7 +38,5 @@ const wallets = [
 ]
 
 export function ThirdwebConnect() {
-  return (
-    <ConnectButton client={client} chains={[celo]} wallets={wallets} connectModal={{ size: "wide" }} theme="dark" />
-  )
+  return <ConnectEmbed client={client} chains={[celo]} wallets={wallets} theme="dark" />
 }
