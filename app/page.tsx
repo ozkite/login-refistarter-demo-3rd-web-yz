@@ -1,9 +1,12 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ThirdwebConnect } from "@/components/thirdweb-connect"
+import { RegisterButton } from "@/components/register-button"
+import { RegistrationForm } from "@/components/registration-form"
 
 export default function HomePage() {
   const rightSideRef = useRef<HTMLDivElement>(null)
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -37,6 +40,10 @@ export default function HomePage() {
           <img src="/refi-logo.png" alt="ReFi STARTER" className="h-16 w-auto" />
         </div>
 
+        <div className="absolute top-8 right-8 z-10">
+          <RegisterButton onClick={() => setShowRegistrationForm(true)} />
+        </div>
+
         <div className="z-10 flex flex-col items-center gap-6">
           <h1 className="text-4xl font-bold text-white text-center">Welcome to ReFi Starter</h1>
           <div className="flex flex-col items-center gap-4">
@@ -63,6 +70,8 @@ export default function HomePage() {
           />
         </div>
       </div>
+
+      {showRegistrationForm && <RegistrationForm onClose={() => setShowRegistrationForm(false)} />}
     </div>
   )
 }
